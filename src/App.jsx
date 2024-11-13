@@ -3,13 +3,13 @@ import './App.css';
 import {Title, Input, CreateElement} from './assets/components/index';
 
 function App () {
-  const [content, setContent] = useState([]);
+  const [createContent, setCreateContent] = useState([]);
 
   return (
     <>
       <Title />
-      <Input setContent={setContent} />
-      <CreateElement content={content} />
+      <Input setCreateContent={setCreateContent} />
+      <CreateElement createContent={createContent} />
     </>
   );
 }
