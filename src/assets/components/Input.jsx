@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-const Input = ({setCreateContent}) => {
+const Input = ({setCreateContent, setDisplayItems}) => {
   const [inputTextValue, setInputTextValue] = useState('');
   const [inputTitleValue, setInputTitleValue] = useState('');
 
@@ -15,17 +15,18 @@ const Input = ({setCreateContent}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputTitleValue && inputTextValue) {
-      setCreateContent((prevcreateContent) => [...prevcreateContent, {title: inputTitleValue, text: inputTextValue}]);
+      setCreateContent((prevcreateContent) => [...prevcreateContent, {title: inputTitleValue, text: inputTextValue}].reverse());
       localStorage.setItem(inputTitleValue, inputTextValue);
       setInputTitleValue('');
       setInputTextValue('');
     }
   };
 
-  const handleReset = () => {
+  const handleReset = (e) => {
     setInputTitleValue('');
     setInputTextValue('');
     localStorage.clear();
+    setDisplayItems([]);
     setCreateContent([]);
   };
 
