@@ -1,4 +1,5 @@
 import {useState} from "react";
+import inputStyles from '../css/Input.module.css';
 
 const Input = ({setCreateContent, setDisplayItems}) => {
   const [inputValue, setInputValue] = useState('');
@@ -29,7 +30,7 @@ const Input = ({setCreateContent, setDisplayItems}) => {
   
   return (
     <>
-      <div className="form">
+      <div className={inputStyles.form}>
         <input
           type="text"
           id="user-text"
@@ -38,8 +39,8 @@ const Input = ({setCreateContent, setDisplayItems}) => {
           onChange={handleTextChange}
         />
       </div>
-      <div className="btn__wrapper">
-        <button className="submit-btn" onClick={handleSubmit}>新規</button>
+      <div className={inputStyles.btn__wrapper}>
+        <button className="submit-btn" onClick={handleSubmit}>新規作成</button>
         <button className="reset-btn" onClick={handleReset}>リセット</button>
       </div>
     </>

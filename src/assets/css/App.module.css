@@ -1,0 +1,16 @@
+.contents__wrapper {
+  box-sizing: border-box;
+  margin: 60px auto 0;
+  width: 920px;
+}
+
+.input__container {
+  border: 2px solid black;
+  width: 80%;
+  padding: 40px;
+}
+
+.output__container {
+  margin-top: 40px;
+  text-align: left;
+}

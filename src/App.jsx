@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './App.css';
+import appStyles from './assets/css/App.module.css';
 import {Title, Input, CreateElement, Display} from './assets/components/index';
 
 function App () {
@@ -7,14 +7,16 @@ function App () {
   const [displayItems, setDisplayItems] = useState([]);
 
   return (
-    <>
-      <Title />
-      <Input setCreateContent={setCreateContent} setDisplayItems={setDisplayItems}/>
-      <div className='output__wrapper'>
-        <CreateElement createContent={createContent} />
-        <Display setDisplayItems={setDisplayItems} displayItems={displayItems}/>
+    <div className={appStyles.contents__wrapper}>
+      <div className={appStyles.input__container}>
+        <Title />
+        <Input setCreateContent={setCreateContent} setDisplayItems={setDisplayItems} />
       </div>
-    </>
+      <div className={appStyles.output__container}>
+        <CreateElement createContent={createContent} />
+        <Display setDisplayItems={setDisplayItems} displayItems={displayItems} />
+      </div>
+    </div>
   );
 }
 

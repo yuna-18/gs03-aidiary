@@ -1,0 +1,7 @@
+.output__item {
+  width: 410px;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  margin-top: 40px;
+}

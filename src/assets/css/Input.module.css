@@ -1,0 +1,15 @@
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.form input {
+  margin-top: 20px;
+  width: 400px;
+}
+
+.btn__wrapper {
+  display: flex;
+  margin-top: 20px;
+  column-gap: 20px;
+}

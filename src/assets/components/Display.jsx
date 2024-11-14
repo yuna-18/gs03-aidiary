@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import {useEffect} from "react";
+import OutputStyles from '../css/Output.module.css';
 
 const Display = ({ setDisplayItems, displayItems }) => {
   // ロード時にローカルストレージに保存された要素を読み込み、逆順にセット
@@ -23,7 +24,7 @@ const Display = ({ setDisplayItems, displayItems }) => {
   return (
     <>
       {displayItems.map((item) => (
-        <div key={item.id} className="output__item">
+        <div key={item.id} className={OutputStyles.output__item}>
           <p>{item.value}</p>
         </div>
       ))}
