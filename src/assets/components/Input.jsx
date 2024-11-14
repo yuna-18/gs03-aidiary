@@ -2,6 +2,7 @@ import {useState} from "react";
 
 const Input = ({setCreateContent, setDisplayItems}) => {
   const [inputValue, setInputValue] = useState('');
+  const [inputId, setInputId] = useState(localStorage.length);
 
   const handleTextChange = (e) => {
     setInputValue(e.target.value);
@@ -11,8 +12,8 @@ const Input = ({setCreateContent, setDisplayItems}) => {
     e.preventDefault();
     if (inputValue) {
       setCreateContent((prevcreateContent) => [...prevcreateContent, {text: inputValue}].reverse());
-      const id = generateId();
-      localStorage.setItem(id, inputValue);
+      setInputId((previnputId) => previnputId + 1);
+      localStorage.setItem(inputId, inputValue);
       setInputValue('');
     }
   };
@@ -21,14 +22,11 @@ const Input = ({setCreateContent, setDisplayItems}) => {
     // setInputTitleValue('');
     setInputValue('');
     localStorage.clear();
+    setInputId(0);
     setDisplayItems([]);
     setCreateContent([]);
   };
   
-  const generateId = () => {
-    return Math.floor(Math.random() * 100);
-  }
-
   return (
     <>
       <div className="form">
