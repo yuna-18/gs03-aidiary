@@ -11,7 +11,7 @@ function App () {
   const [reply, setReply] = useState('');
   // フォーム入力データ
   const [inputValue, setInputValue] = useState('');
-  
+
   // API管理
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,14 +20,14 @@ function App () {
     <div className={appStyles.contents__wrapper}>
       <div className={appStyles.input__container}>
         <Title />
-        <Input setCreateContent={setCreateContent} setDisplayItems={setDisplayItems} setInputValue={setInputValue} inputValue={inputValue}  setReply={setReply} setLoading={setLoading} setError={setError}/>
+        <Input setCreateContent={setCreateContent} setDisplayItems={setDisplayItems} setInputValue={setInputValue} inputValue={inputValue} setReply={setReply} setLoading={setLoading} setError={setError} />
       </div>
       <div className={appStyles.output__container}>
-        <CreateElement createContent={createContent} />
-        <InputDisplay setDisplayItems={setDisplayItems} displayItems={displayItems}/>
-      </div>
-      <div className={appStyles.api__container}>
-        <APIDisplay reply={reply} loading={loading} error={error}/>
+        <div className={appStyles.user__outer}>
+          <CreateElement createContent={createContent} />
+          <InputDisplay setDisplayItems={setDisplayItems} displayItems={displayItems} />
+        </div>
+        <APIDisplay reply={reply} loading={loading} error={error} />
       </div>
     </div>
   );
