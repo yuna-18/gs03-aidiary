@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import OutputStyles from '../css/Output.module.css';
 
-const Display = ({ setDisplayItems, displayItems }) => {
+const InputDisplay = ({ setDisplayItems, displayItems }) => {
   // ロード時にローカルストレージに保存された要素を読み込み、逆順にセット
   useEffect(() => {
     const initDisplayItems = [];
@@ -32,4 +32,4 @@ const Display = ({ setDisplayItems, displayItems }) => {
   );
 };
 
-export default Display;
+export default InputDisplay;
