@@ -1,50 +1,42 @@
 import {useState} from "react";
 
 const Input = ({setCreateContent, setDisplayItems}) => {
-  const [inputTextValue, setInputTextValue] = useState('');
-  const [inputTitleValue, setInputTitleValue] = useState('');
-
-  const handleTitleChange = (e) => {
-    setInputTitleValue(e.target.value);
-  };
+  const [inputValue, setInputValue] = useState('');
 
   const handleTextChange = (e) => {
-    setInputTextValue(e.target.value);
+    setInputValue(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputTitleValue && inputTextValue) {
-      setCreateContent((prevcreateContent) => [...prevcreateContent, {title: inputTitleValue, text: inputTextValue}].reverse());
-      localStorage.setItem(inputTitleValue, inputTextValue);
-      setInputTitleValue('');
-      setInputTextValue('');
+    if (inputValue) {
+      setCreateContent((prevcreateContent) => [...prevcreateContent, {text: inputValue}].reverse());
+      const id = generateId();
+      localStorage.setItem(id, inputValue);
+      setInputValue('');
     }
   };
 
   const handleReset = (e) => {
-    setInputTitleValue('');
-    setInputTextValue('');
+    // setInputTitleValue('');
+    setInputValue('');
     localStorage.clear();
     setDisplayItems([]);
     setCreateContent([]);
   };
+  
+  const generateId = () => {
+    return Math.floor(Math.random() * 100);
+  }
 
   return (
     <>
       <div className="form">
         <input
           type="text"
-          id="user-title"
-          className="input-text"
-          value={inputTitleValue}
-          onChange={handleTitleChange}
-        />
-        <input
-          type="text"
           id="user-text"
           className="input-text"
-          value={inputTextValue}
+          value={inputValue}
           onChange={handleTextChange}
         />
       </div>

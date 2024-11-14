@@ -6,12 +6,11 @@ const Display = ({setDisplayItems, displayItems}) => {
   useEffect(() => {
     const initDisplayItems = [];
     for (let i = localStorage.length - 1; i >= 0; i--) {
-      const title = localStorage.key(i);
-      const value = localStorage.getItem(title);
+      const id = localStorage.key(i);
+      const value = localStorage.getItem(id);
 
       initDisplayItems.push(
-        <div key={title} className="output__item">
-          <h2>{title}</h2>
+        <div key={id} className="output__item">
           <p>{value}</p>
         </div>
       );

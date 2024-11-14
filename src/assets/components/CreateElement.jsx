@@ -4,8 +4,7 @@ const CreateElement = ({createContent}) => {
     return (
       <>
         {createContent.map((item, index) => (
-          <div key={index} className="output__item"> {/* title をキーにする */}
-            <h2>{item.title}</h2>
+          <div key={index} className="output__item"> {/* id をキーにする */}
             <p>{item.text}</p>
           </div>
         ))}
