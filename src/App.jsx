@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import './App.css';
-import {Title, Input, CreateElement} from './assets/components/index';
+import {Title, Input, CreateElement, Display} from './assets/components/index';
 
 function App () {
   const [createContent, setCreateContent] = useState([]);
@@ -9,7 +9,10 @@ function App () {
     <>
       <Title />
       <Input setCreateContent={setCreateContent} />
-      <CreateElement createContent={createContent} />
+      <div className='output__wrapper'>
+        <CreateElement createContent={createContent} />
+        <Display/>
+      </div>
     </>
   );
 }
