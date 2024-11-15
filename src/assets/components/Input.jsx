@@ -78,7 +78,7 @@ const Input = ({setTextElement, setDisplayItems, setInputValue, inputValue, setR
         />
       </div>
       <div className={inputStyles.btn__wrapper}>
-        <button className="submit-btn" onClick={handleSubmit}>新規作成</button>
+        <button className="submit-btn" onClick={handleSubmit}>確定</button>
         <button className="reset-btn" onClick={handleReset}>リセット</button>
       </div>
     </>
