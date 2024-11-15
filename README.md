@@ -1,9 +1,30 @@
-# React + Vite
+# ①課題番号-プロダクト名
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+課題3-AI Diary
 
-Currently, two official plugins are available:
+## ②課題内容（どんな作品か）
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# gs03-aidiary
+- 一言を記入して確定すると、AI(Gemini AI)が相槌を打ってくれます。
+
+## ③DEMO
+https://yuna-18.github.io/gs03-aidiary/
+
+## ⑤工夫した点・こだわった点
+
+- リロードしてもリセットしないようにした
+- AIの出力と入力データを一体化させて、一括管理できるようにした
+- 新しく入力したものが一番上に来るようにした
+- 前回できなかった、コンポーネントの分割やモジュールcssの利用
+
+## ⑥難しかった点・次回トライしたいこと(又は機能)
+
+### 難しかった点
+- APIの利用。JSが基本だったのでReactに書き換えるのに苦戦した
+
+### 次回トライしたいこと
+- 画像をつけたり、AIに感情を表す言葉を設定させて相槌にあった絵文字を表示させるなどのデザイン面
+
+
+## ⑦質問・疑問・感想、シェアしたいこと等なんでも
+ - ローカルストレージにオブジェクトも保存できることに思い至らず、かなりの時間苦戦しました。
+ - APIキーの.envファイルの書き方はReactとViteとで別物らしく、環境構築によっても注意しなければならないらしい(よく考えれば当たり前だけどすごい詰まりました)
