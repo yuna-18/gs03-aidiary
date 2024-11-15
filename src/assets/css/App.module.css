@@ -1,20 +1,17 @@
 .contents__wrapper {
   box-sizing: border-box;
   margin: 40px auto 0;
-  width:920px;
+  width:820px;
 }
 
 .input__container {
   border: 2px solid black;
-  width:920px;
-  /* margin: 0 auto; */
+  width:820px;
   padding: 40px;
 }
 
 .output__container {
   margin-top: 40px;
-  width:1000px;
+  width:900px;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
 }

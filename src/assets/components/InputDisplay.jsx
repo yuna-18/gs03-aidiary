@@ -1,22 +1,21 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import OutputStyles from '../css/Output.module.css';
 
-const InputDisplay = ({ setDisplayItems, displayItems }) => {
-  // ロード時にローカルストレージに保存された要素を読み込み、逆順にセット
+const InputDisplay = ({ setDisplayItems, displayItems, loading, error }) => {
   useEffect(() => {
     const initDisplayItems = [];
+
+    // ローカルストレージの内容を逆順に取得して initDisplayItems に格納
     for (let i = 0; i < localStorage.length; i++) {
       const id = localStorage.key(i);
-      const value = localStorage.getItem(id);
-
-      initDisplayItems.push({ id, value });
+      const value = JSON.parse(localStorage.getItem(id));
+      initDisplayItems.push({ value });
     }
     // IDが大きい順にソート（降順）
-    initDisplayItems.sort((a, b) => parseInt(b.id) - parseInt(a.id));
+    // IDの降順にソート
     setDisplayItems(initDisplayItems);
-  }, [setDisplayItems]);
+  }, []);
 
-  // displayItemsが空の場合は何も表示しない
   if (displayItems.length === 0) {
     return null;
   }
@@ -24,8 +23,13 @@ const InputDisplay = ({ setDisplayItems, displayItems }) => {
   return (
     <>
       {displayItems.map((item) => (
-        <div key={item.id} className={OutputStyles.output__item}>
-          <p>{item.value}</p>
+        <div key={item.value.id} className={OutputStyles.output__item}>
+          <p>{item.value.text}</p>
+          {error ? (
+              <p>{error}</p>
+            ) : (
+              <p>GeminiAI:<br />{item.value.reply}</p>
+            )}
         </div>
       ))}
     </>
