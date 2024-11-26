@@ -1,15 +1,30 @@
-h3 {
-  margin: 0;
-  padding: 0;
+@media screen {
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form input {
+    margin-top: calc(20 / 750 * 100vw);
+    width: 90%;
+  }
+  
+  .btn__wrapper {
+    display: flex;
+    margin-top: calc(20 / 750 * 100vw);
+    column-gap: calc(20 / 750 * 100vw);
+  }
 }
 
-.form input {
-  margin-top: 20px;
-  width: 400px;
-}
-
-.btn__wrapper {
-  display: flex;
-  margin-top: 20px;
-  column-gap: 20px;
+@media screen and (min-width: 1200px) {
+  .form input {
+    margin-top: 20px;
+    width: 400px;
+  }
+  
+  .btn__wrapper {
+    display: flex;
+    margin-top: 20px;
+    column-gap: 20px;
+  }
 }
