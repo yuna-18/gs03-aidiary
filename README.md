@@ -7,7 +7,7 @@
 - 一言を記入して確定すると、AI(Gemini AI)が相槌を打ってくれます。
 
 ## ③DEMO
-https://gs03-aidiary-i7a2q78cd-yuna-18s-projects.vercel.app/
+https://gs03-aidiary.vercel.app/
 
 ## ⑤工夫した点・こだわった点
 
